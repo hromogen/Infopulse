@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../f2/stylesheets/form2.css">
+<title>New form template</title>
+
+</head>
+<body>
+	
+	<form action='?' method='GET' class='repo-form' id="form2">
+         <h5>Input your new repository information, please</h5>
+		<formfield id="1">
+			<label class='repo-form_field' for="name">Name</label><br>
+			<input type='text' name='name' class='field' id="name">
+		</formfield >
+		<formfield id="2">
+			<label class='repo-form_field' for="description">Short description</label><br>
+			<textarea name='descriprion' id="description" class='repo-form__description' placeholder="Short description" cols = "22" rows="5"></textarea>
+		</formfield>
+		<formfield id="3">
+			<label class='repo-form_field' for="languages">What languages are you going to use?</label>
+			<br>
+			<input type='checkbox' name='language' value='JavaScript' class='repo-form__language' id='JavaScript'><label for='JavaScript' class='repo-form__language-label'>JavaScript</label>
+			<br>
+			<input type='checkbox' name='language' value='C#' class='repo-form__language' id='JavaScript'><label for='C#' class='repo-form__language-label'>C#</label>
+			<br>
+			<input type='checkbox' name='language' value='PHP' class='repo-form__language' id='PHP'><label for='PHP' class='repo-form__language-label'>PHP</label>
+			<br>
+			<input type='checkbox' name='language' value='Pyhon' class='repo-form__language' id='Python'><label for='Python' class='repo-form__language-label'>Python</label>
+			<br>
+			<input type='checkbox' name='language' value='Other' class='repo-form__language' id='Other'><label for='Other' class='repo-form__language-label'>Other (please, specify)</label>
+			<input type='text' name='language' class='repo-form__language-label' id='Specified'>
+		</formfield>
+		<formfield id="4">
+			<label class='repo-form_field'>What is the general purpose of your project?</label>
+			<br>
+			<input type='radio' name='purpose' value='study'  class='repo-form__radio' id='study' checked><label 	for='study'  class='repo-form__purpose-label' >Study</label>
+			<input type='radio' name='purpose' value='job'  class='repo-form__radio' id='job'><label 	for='job'  class='repo-form__purpose-label' >Job</label>
+			<input type='radio' name='purpose' value='fun'  class='repo-form__radio' id='fun'><label 	for='fun'  class='repo-form__purpose-label'>Fun</label><input type='radio' name='purpose' value='charity'  class='repo-form__radio' id='charity'><label 	for='charity'  class='repo-form__purpose-label'>Charity</label>
+		</formfield>
+		<formfield id="5">
+			<label class='repo-form_field'>Define your gender, please</label>
+			<select class='repo-form__gender-option'>
+				<option class = repo-form__option name="male" id="male" value="male">Male</option>
+				<option class = repo-form__option name="female" id="female" value="female">Femail</option>
+				<option class = repo-form__option name="other" id="other" value="other">Other</option>
+			</select>
+		</formfield>
+		<formfield id="6">
+			<label class='b-form__label_season'>What is your age?</label>
+			<input type='number' name='age' value='18'  class='repo-form__value' id='age' min="0">
+		</formfield>
+		<input type='submit' name='repo-form_submit' value='Submit'  class='repo-form__submit' id='submit'>
+	</form>
+
+</body>
+		<script type='text/javascript' src='../../f2/scripts/jquery-3.2.1.min.js'></script>
+
+	<!--<script type='text/javascript' src='../../f2/scripts/settings.js'></script>
+	<script type='text/javascript' src='../../f2/scripts/init_settings.js'></script>-->
+	<script type='text/javascript' src='../../f2/scripts/form2.js'></script>
+	<script>
+	var f1 = new b_form('#form2');
+	</script>
+</html>

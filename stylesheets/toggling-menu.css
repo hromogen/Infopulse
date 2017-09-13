@@ -1,0 +1,50 @@
+
+.menu, .menu__item, .submenu__item, .submenu[visibility=visible] {
+    list-style-type: none;
+    1float: left;
+	display:block;
+	1display:flex;
+	1flex-basis: auto;
+	1flex-flow: column nowrap;
+	1justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+	height: auto;
+	margin: 20px 40px;
+		
+}
+.menu__item, .submenu__item { 
+    height:20px;
+	margin:5px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.menu__text, .submenu__text {
+    display: block;
+    padding: 3px 5px;
+    background: none repeat scroll 0 0 #999999;
+    white-space: nowrap;
+}
+.submenu__text {
+    background: none repeat scroll 0 0 #EEEEEE;
+}
+.submenu:not(.invisible) {
+	1visibility:hidden;
+	/* фактическое наличие */
+	1opacity: 0;				/* прозрачность */
+	
+	2transition: visibility 0.4s, opacity 0.4s;
+}
+
+.submenu_shown {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+	}
+.menu__text:hover, .submenu__text:hover  {
+    background: none repeat scroll 0 0 #ADD8E6;
+    cursor:pointer;
+    border: 1px solid #777
+}

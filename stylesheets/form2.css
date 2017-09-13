@@ -1,0 +1,13 @@
+formfield {
+	margin:10px;
+	display: block;
+}
+textarea {
+    resize: none;
+}
+input#age, input#Specified {
+	width: 50px;
+}
+#submit{
+	margin:10px
+}
