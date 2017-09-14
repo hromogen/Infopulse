@@ -2,13 +2,23 @@ function togglingMenu (sSelector){
  var m = this;
  m.menu = $(sSelector);
  m.toggleSubmenu = function(oMenuItem){
-  $(oMenuItem.target).next(".submenu").slideToggle().stop();
+  var target = oMenuItem.target
+  ,oSubmenuParent = $(target).closest(".submenu")
+  ,oParent = $(target).closest(".menu__item");
+ if(!oSubmenuParent.length){
+     oParent.find(".submenu").toggleClass("closed").stop();
  }
-m.hideSubmenu = function(oMenuItem){
-		$(oMenuItem.target).next('.submenu').addClass("invisible").stop().slideUp(400) 
+ }
+ m.hideOnOut = function(oMenuItem){
+    var from = oMenuItem.target
+    , to = oMenuItem.relatedTarget;
+     
+    if(getItemParent(to) != getItemParent(from)){
+        $(from).closest(".menu__item").find(".submenu").stop().addClass("closed")
+    }
 }
-
- m.menu.find('.menu__text').click(m.toggleSubmenu)
-// m.menu.find('.menu__text').mouseleave(m.hideSubmenu);
-
+ 
+ function getItemParent(oDOM){return $(oDOM).closest(".menu__item").get(0)}
+m.menu.click(m.toggleSubmenu)
+    .mouseout(m.hideOnOut);
  }

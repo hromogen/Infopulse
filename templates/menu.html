@@ -8,15 +8,17 @@ header("Content-Type: text/html;charset=UTF-8");
 		<style type="text/css">
 			#controllers{
 				position: fixed;
-				width:100px;
+                text-align: center;
+				width:200px;
 				right:20px;
 				top:20px;
 				margin: 20px 40px;
 				border: 1px solid black
 			}
-				button{
-					display:inline-block;
-					margin: 10px;
+			button{
+				display:block;
+                width:140px;
+				margin: 5px 30px;
 			}
 
 		</style>
@@ -24,13 +26,13 @@ header("Content-Type: text/html;charset=UTF-8");
 	<body>
 		<ul class='menu' id='menu'>
             <li class='menu__item'><span class="menu__text">Bacteria </span>
-                <ul class='submenu' hidden>
+                <ul class='submenu closed'>
                     <li class='submenu__item'> <span class="submenu__text">Bacteria</span></li>
 				    <li class='submenu__item'><span class="submenu__text"> Archaea </span></li>
                 </ul>
             </li>
             <li class='menu__item'><span class="menu__text">Protozoa </span>
-				<ul class='submenu' hidden>
+				<ul class='submenu closed'>
 					<li class='submenu__item'><span class="submenu__text">Sarcomastigophora</span>  </li>
 					<li class='submenu__item'> <span class="submenu__text">Sporozoa </span> </li>
 					<li class='submenu__item'> <span class="submenu__text">Cnidospora</span> </li>
@@ -38,28 +40,28 @@ header("Content-Type: text/html;charset=UTF-8");
 				</ul>
 			</li>
 			<li class='menu__item'><span class="menu__text">Chromista</span> 
-                <ul class='submenu' hidden>
+                <ul class='submenu closed'>
                     <li class='submenu__item'><span class="submenu__text">Heterokonts</span> </li>
                     <li class='submenu__item'><span class="submenu__text">Haptophytes </span></li>
                     <li class='submenu__item'><span class="submenu__text">Cryptomonads </span></li>
                 </ul>
                 </li>
             <li class='menu__item'><span class="menu__text">Plantae</span>
-                <ul class='submenu' hidden>
+                <ul class='submenu closed'>
                     <li class='submenu__item'><span class="submenu__text">Prasinophyceae</span></li>
                     <li class='submenu__item'><span class="submenu__text">Streptobionta</span></li>    
                     <li class='submenu__item'><span class="submenu__text">Chlorophyta</span></li>
                 </ul>
                 </li>
             <li class='menu__item'><span class="menu__text">Fungi</span> 
-                <ul class='submenu' hidden>
+                <ul class='submenu closed'>
                     <li class='submenu__item'><span class="submenu__text">Cristidiscoidea</span></li>
                     <li class='submenu__item'><span class="submenu__text">Opisthosporidia</span></li>
                     <li class='submenu__item'><span class="submenu__text">Eumycota</span></li>
                 </ul>
                 </li>
             <li class='menu__item'><span class="menu__text">Animalia</span>
-                <ul class='submenu' hidden>
+                <ul class='submenu closed'>
                    <li class='submenu__item'><span class="submenu__text">Porifera</span></li>
                    <li class='submenu__item'><span class="submenu__text">Diploblast</span></li>
                 </ul>
@@ -70,30 +72,29 @@ header("Content-Type: text/html;charset=UTF-8");
 		<button onclick="makeVertical">Vertical</button>
 		<button onclick="makeToggling()">Toggling</button>
 		<button onclick="makeTabbing">Tabbing</button>
-		<button onclick="placeOutOfScrin">Tabbing</button>
+		<button onclick="placeOutOfScrin">Appear out of screen</button>
 		<button></button>
 		</div>
 	
   </body>
 </html>
-<script id="loadedScript"></script>
-
-<script src='../../f2/scripts/jquery-3.2.1.min.js' class="default"></script>
-<script type="application/javascript" src="../scripts/toggling-menu.js">
-      </script>
+<script src='../../Basic_UI_tools/scripts/jquery-3.2.1.min.js' class="default"></script>
+<script type="application/javascript" src="../../Basic_UI_tools/scripts/toggling-menu.js"></script>
 	<script type="text/javascript" >
+        function makeVertical(){}
 		function makeToggling (){
-			var toggleScript = document.createElement("script")
-			, toggleStyle = document.createElement("link")
+			var toggleStyle = document.createElement("link")
 			, style = null
 			,menu
 			toggleStyle.rel = "stylesheet";
 			toggleStyle.href = '../stylesheets/toggling-menu.css';			
 			$("link").remove(":not(.default)");
 			$("head").append(toggleStyle);
-			
+			var menu = new togglingMenu('#menu');
 		}
-		var menu = new togglingMenu('#menu')
+        function makeTabbing(){}
+        function placeOutOfScrin(){}
+        
 		</script>
 		
 
