@@ -14,7 +14,7 @@ header("Content-Type: text/html;charset=UTF-8");
 	</head>
 	<body>
 		<div class='b-gallery' id='gallery1'>
-			<div class='b-picture'><img src='../images/gallery/small_79.png' class='b-picture__image' alt='Фото 79'></div>
+			<div class='b-picture'><img src='../images/gallery/small_79.png' class='b-picture__image' alt='Image 79'></div>
 			<div class='b-picture'><img src='../images/gallery/small_80.png' class='b-picture__image' alt='Image 80'></div>
 			<div class='b-picture'><img src='../images/gallery/small_82.png' class='b-picture__image' alt='Image 82'></div>
 			<div class='b-picture'><img src='../images/gallery/small_83.png' class='b-picture__image' alt='Image 83'></div>
@@ -36,13 +36,16 @@ header("Content-Type: text/html;charset=UTF-8");
 		
 	</body>
 	<script type='text/javascript' src='../scripts/jquery-3.2.1.min.js'></script>
-	<!--
-	-->
+	<!-- -->
+	
 	<script type='text/javascript' src='../scripts/component.js'></script>
 	<script type='text/javascript' src='../scripts/gallery.js'></script>
 	<script type='text/javascript' src='../scripts/error.js'></script>
 	<script>
 	// !@#$%^&*()
 	var g1 = new b_gallery('#gallery1');
+        window.onbeforeunload = function (){
+            return 'You are going to lose your changes. Reload page?';
+        }    
 	</script>
 </html>

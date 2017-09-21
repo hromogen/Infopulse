@@ -1,0 +1,110 @@
+<!DOCKTYPE HTML>
+<html>
+	<!--<?
+header("Content-Type: text/html;charset=UTF-8");
+?>*/-->
+	<head>	
+		<title>Menus</title>
+		<style type="text/css">
+			#controllers{
+				position: fixed;
+                text-align: center;
+				width:200px;
+				right:20px;
+				top:20px;
+				margin: 20px 40px;
+				border: 1px solid black
+			}
+			button{
+				display:block;
+                width:140px;
+				margin: 5px 30px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<ul class='menu' id='menu'>
+            <li class='menu__item'><span class="menu__text">Bacteria </span>
+                <ul class='submenu closed'>
+                    <li class='submenu__item'> <span class="submenu__text">Bacteria</span></li>
+				    <li class='submenu__item'><span class="submenu__text"> Archaea </span></li>
+                </ul>
+            </li>
+            <li class='menu__item'><span class="menu__text">Protozoa </span>
+				<ul class='submenu closed'>
+					<li class='submenu__item'><span class="submenu__text">Sarcomastigophora</span>  </li>
+					<li class='submenu__item'> <span class="submenu__text">Sporozoa </span> </li>
+					<li class='submenu__item'> <span class="submenu__text">Cnidospora</span> </li>
+                    <li class='submenu__item'> <span class="submenu__text">Ciliophora</span> </li>
+				</ul>
+			</li>
+			<li class='menu__item'><span class="menu__text">Chromista</span> 
+                <ul class='submenu closed'>
+                    <li class='submenu__item'><span class="submenu__text">Heterokonts</span> </li>
+                    <li class='submenu__item'><span class="submenu__text">Haptophytes </span></li>
+                    <li class='submenu__item'><span class="submenu__text">Cryptomonads </span></li>
+                </ul>
+                </li>
+            <li class='menu__item'><span class="menu__text">Plantae</span>
+                <ul class='submenu closed'>
+                    <li class='submenu__item'><span class="submenu__text">Prasinophyceae</span></li>
+                    <li class='submenu__item'><span class="submenu__text">Streptobionta</span></li>    
+                    <li class='submenu__item'><span class="submenu__text">Chlorophyta</span></li>
+                </ul>
+                </li>
+            <li class='menu__item'><span class="menu__text">Fungi</span> 
+                <ul class='submenu closed'>
+                    <li class='submenu__item'><span class="submenu__text">Cristidiscoidea</span></li>
+                    <li class='submenu__item'><span class="submenu__text">Opisthosporidia</span></li>
+                    <li class='submenu__item'><span class="submenu__text">Eumycota</span></li>
+                </ul>
+                </li>
+            <li class='menu__item'><span class="menu__text">Animalia</span>
+                <ul class='submenu closed'>
+                   <li class='submenu__item'><span class="submenu__text">Porifera</span></li>
+                   <li class='submenu__item'><span class="submenu__text">Diploblast</span></li>
+                </ul>
+                </li>
+		</ul>
+		<div id="controllers">
+		<h4>Make menu</h4>
+		<button onclick="makeToggling()">Toggling</button>
+		<button onclick="makeTabbing()">Tabbing</button>
+		<button onclick="placeOutOfScrin()">Appear out of screen</button>
+		</div>
+	
+  </body>
+</html>
+<script src='../scripts/jquery-3.2.1.min.js' class="default"></script>
+<script type="application/javascript" src="../scripts/component.js"></script>
+<script type="application/javascript" src="../scripts/interactive_menu.js"></script>
+	<script type="text/javascript" >
+        function changeStyle(sStyleFileName){
+            var currentStyle = document.createElement("link")
+            currentStyle.rel = "stylesheet";
+            currentStyle.href = "../stylesheets/" + sStyleFileName + ".css";
+            $("link").remove(":not(.default)");
+            $("head").append(currentStyle);
+            $("#placeholder").remove();
+            delete menu;
+        }
+		function makeToggling (){
+			changeStyle("toggling-menu");
+			var menu = new interactiveMenu("#menu","clicking");
+        }
+        function makeTabbing(){
+			changeStyle("tab-menu")
+			var menu = new interactiveMenu("#menu","hovering");
+        }
+        function placeOutOfScrin(){
+			changeStyle("menu-out-of-screen-edge");
+            var menu = new interactiveMenu("#menu","clicking","closed");
+            
+        }
+		</script>
+		
+
+
+
+ 
